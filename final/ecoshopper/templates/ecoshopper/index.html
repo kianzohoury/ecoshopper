@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ecoshopper</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'draw/vendor/bootstrap/css/bootstrap.min.css' %}">
+	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script type="text/javascript" src="{% static 'draw/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'draw/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'draw/vendor/paper/paper-full.min.js' %}"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <style type="text/css">
+
+      body{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        font-family: 'Helvetica Neue';
+        background-color:mediumseagreen;
+        margin: 0;
+        padding: 0;
+
+      }
+
+      #temp_header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        background-color: #0b4b33;
+      }
+
+      #temp_logo {
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+    </style>
+</head>
+<body>
+  <div id='temp_header' class='d-flex'>
+    <div id='temp_logo' class='text'>
+      ecoshopper template
+    </div>
+  </div>
+</body>
+<script>
+</script>
+</html>
