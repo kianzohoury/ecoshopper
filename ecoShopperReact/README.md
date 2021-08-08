@@ -29,7 +29,7 @@ Important resources:
 
 ### Use the React Native Web Console
 
-Open this demo: https://expo.dev/tools#client and follow the comment text there. You can add html code or use React Native components. 
+Open this demo: https://snack.expo.dev/@evelynluw/hello-world and follow the comment text there. You can add html code or use React Native components. 
 
 Note that the way css works in React Native is just a bit different, we can't use external css files but we just add the css directly in the same file. CSS converts very easily to the Javascript syntax React uses. You'll find out once you see the code.
 
