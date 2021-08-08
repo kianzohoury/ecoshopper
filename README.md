@@ -1,5 +1,7 @@
 # ecoshopper
 
+[Frontend guide](ecoShopperReact\README.md)
+
 This is our final project documentation. Feel free to add more tasks or TODOs as we continue working. I've added the notebook that runs the model that we'll use for the object detection task. 
 
 ## Dataset
