@@ -12,6 +12,7 @@ import Navigation from './navigation';
 import CreateAccountPage1 from './screens/CreateAccount1';
 import CreateAccountPage2 from './screens/CreateAccount2';
 import CreateAccountPage3 from './screens/CreateAccount3';
+import ScanScreen from './screens/ScanScreen';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +36,7 @@ export default function App() {
         <Stack.Screen name="CA1" component={CreateAccountPage1} options={{ headerShown: false }} />
         <Stack.Screen name="CA2" component={CreateAccountPage2} options={{ headerShown: false }} />
         <Stack.Screen name="CA3" component={CreateAccountPage3} options={{ headerShown: false }} />
+        <Stack.Screen name="Scan" component={ScanScreen} options={{}} />
       </Stack.Navigator>
     </NavigationContainer>
   )
