@@ -12,6 +12,8 @@ import Navigation from './navigation';
 import CreateAccountPage1 from './screens/CreateAccount1';
 import CreateAccountPage2 from './screens/CreateAccount2';
 import CreateAccountPage3 from './screens/CreateAccount3';
+import CreateLoadingPage from './screens/Loading'
+import LoginScreen from './screens/LoginScreen'
 import ScanScreen from './screens/ScanScreen';
 
 const Stack = createStackNavigator();
@@ -33,10 +35,12 @@ export default function App() {
   return (
     <NavigationContainer theme={MyTheme}>
       <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="CA1" component={CreateAccountPage1} options={{ headerShown: false }} />
         <Stack.Screen name="CA2" component={CreateAccountPage2} options={{ headerShown: false }} />
         <Stack.Screen name="CA3" component={CreateAccountPage3} options={{ headerShown: false }} />
         <Stack.Screen name="Scan" component={ScanScreen} options={{}} />
+        <Stack.Screen name="Loading" component={CreateLoadingPage} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   )
