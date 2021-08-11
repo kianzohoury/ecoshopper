@@ -43,6 +43,10 @@ export default function CreateAccountPage1({ navigation }: { navigation: any }) 
         console.log(`You inputted ${text}`);
         navigation.navigate('CA2');
       }} text='Next >' />
+
+      {/* temp */}
+      <BlackButton onPress={() => { navigation.navigate('Scan') }} text='Scan' />
+
     </View>
   );
 }
