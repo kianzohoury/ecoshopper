@@ -15,6 +15,8 @@ import CreateAccountPage3 from './screens/CreateAccount3';
 import CreateLoadingPage from './screens/Loading'
 import LoginScreen from './screens/LoginScreen'
 import ScanScreen from './screens/ScanScreen';
+import HomeButtonsScreen from './screens/homeButtonsScreen';
+import HomeScreen from './screens/homeScreen';
 
 const Stack = createStackNavigator();
 
@@ -35,12 +37,20 @@ export default function App() {
   return (
     <NavigationContainer theme={MyTheme}>
       <Stack.Navigator>
+<<<<<<< HEAD
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+=======
+        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ title: 'Welcome, User.' }} />
+>>>>>>> 82faae61a6f836aa3ec9b353b1ef84fa2f166129
         <Stack.Screen name="CA1" component={CreateAccountPage1} options={{ headerShown: false }} />
         <Stack.Screen name="CA2" component={CreateAccountPage2} options={{ headerShown: false }} />
         <Stack.Screen name="CA3" component={CreateAccountPage3} options={{ headerShown: false }} />
         <Stack.Screen name="Scan" component={ScanScreen} options={{}} />
+<<<<<<< HEAD
         <Stack.Screen name="Loading" component={CreateLoadingPage} options={{ headerShown: false }} />
+=======
+        <Stack.Screen name="HomeButtonsScreen" component={HomeButtonsScreen} options={{ title: 'Welcome, User.' }} />
+>>>>>>> 82faae61a6f836aa3ec9b353b1ef84fa2f166129
       </Stack.Navigator>
     </NavigationContainer>
   )

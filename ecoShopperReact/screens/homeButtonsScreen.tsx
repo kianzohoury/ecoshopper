@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, Text, TextInput } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import { useTheme, NavigationContainer } from '@react-navigation/native';
 
-import { BlackButton } from '../components/BlackButton';
 import { View } from '../components/Themed';
+import { HomeButtons } from '../components/HomeButtons';
 
-export default function CreateAccountPage3() {
+export default function HomeButtonsScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();
 
   const styles = StyleSheet.create({
@@ -18,24 +18,21 @@ export default function CreateAccountPage3() {
     title: {
       fontSize: 30,
       fontWeight: 'bold',
-      textAlign: 'center',
       marginBottom: 100
     },
-    slidebar: {
+    input: {
       fontSize: 30,
+      width: 300,
+      textAlign: 'center',
       marginBottom: 100,
+      borderBottomWidth: 2
     },
   });
 
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tap your goals below. </Text>
-      <Text style={styles.slidebar}>[Slidebar goes here]</Text>
-      <BlackButton onPress={() => {
-        console.log('CA2 page next button press');
-      }}>{'Next >'}</BlackButton>
-      <Text>Changes can be made later under Settings.</Text>
+      <HomeButtons></HomeButtons>
     </View>
   );
 }

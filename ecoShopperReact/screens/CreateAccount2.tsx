@@ -35,7 +35,7 @@ export default function CreateAccountPage2({ navigation }: { navigation: any }) 
       <BlackButton onPress={() => {
         console.log('CA2 page next button press');
         navigation.navigate('CA3');
-      }} text='Next >' />
+      }}>{'Next >'}</BlackButton>
     </View>
   );
 }

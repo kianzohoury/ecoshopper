@@ -16,8 +16,10 @@
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.2",
-    "expo": "~42.0.1",
+    "expo": "^42.0.3",
     "expo-asset": "~8.3.2",
+    "expo-barcode-scanner": "~10.2.2",
+    "expo-camera": "~11.2.2",
     "expo-constants": "~11.0.1",
     "expo-font": "~9.2.1",
     "expo-linking": "~2.3.1",
@@ -31,9 +33,7 @@
     "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "~3.4.0",
-    "react-native-web": "~0.13.12",
-    "expo-camera": "~11.2.2",
-    "expo-barcode-scanner": "~10.2.2"
+    "react-native-web": "~0.13.12"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

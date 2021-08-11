@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Text, Pressable } from 'react-native';
+import { Text, Pressable, Image, View } from 'react-native';
 
-export function BlackButton({ text, onPress, bordered = false }:
-  { bordered?: boolean, text: string, onPress: () => any }) {
+export function BlackButton({ children, onPress, bordered = false, icon = null }:
+  { children: any, onPress: () => any, bordered?: boolean, icon?: any }) {
   return <Pressable
     onPress={onPress}
     style={({ pressed }) => [
@@ -18,11 +18,21 @@ export function BlackButton({ text, onPress, bordered = false }:
     ]}
   >
     {({ pressed }) => (
-      <Text style={{
-        color: bordered ? 'black' : pressed ? 'black' : 'white',
-        fontWeight: '600',
-        fontSize: 20
-      }}>{text}</Text>
+      <View style={{
+        flexDirection: 'row',
+        alignItems: 'center'
+      }}>
+        <Text style={{
+          color: bordered ? 'black' : pressed ? 'black' : 'white',
+          fontWeight: '800',
+          fontSize: 20,
+          marginRight: 10
+        }}>{children}</Text>
+        <Image style={{
+          width: 40,
+          height: 40
+        }} source={icon} />
+      </View>
     )}
 
   </Pressable>

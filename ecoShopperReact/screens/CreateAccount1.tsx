@@ -43,10 +43,12 @@ export default function CreateAccountPage1({ navigation }: { navigation: any }) 
       <BlackButton onPress={() => {
         console.log(`You inputted ${text}`);
         navigation.navigate('CA2');
-      }} text='Next >' />
+      }}>{'Next >'}</BlackButton>
 
       {/* temp */}
       <BlackButton onPress={() => { navigation.navigate('Scan') }} text='Scan' />
+      <BlackButton onPress={() => { navigation.navigate('Scan') }}>Scan</BlackButton>
+      <BlackButton onPress={() => { navigation.navigate('HomeScreen') }}>Home</BlackButton>
     </View>
   );
 }

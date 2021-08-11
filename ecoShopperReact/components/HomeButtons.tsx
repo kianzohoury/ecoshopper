@@ -7,69 +7,77 @@ const vh = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   tile: {
-    backgroundColor: 'rgba(0, 0, 0, 0.10)',
-    height: 0.3 * vw,    
-    width: 0.3 * vw,
+    flexDirection: 'column-reverse',
+    backgroundColor: 'rgba(0, 0, 0, 0.20)',
+    height: 0.4 * vw,
+    width: 0.4 * vw,
     borderRadius: 4,
     margin: 10,
   },
-
   tileText: {
-    padding: 10,
+    paddingBottom: 10,
+    fontSize: 25,
     textAlign: "center",
     fontWeight: "bold",
     color: "white",
   },
-  
   container: {
     flexWrap: "wrap",
   },
-
-  icon: {
+  rowContainer: {
+    flexWrap: "wrap",
+    flexDirection: "row"
+  },
+  iconContainer: {
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  icon: {
+    width: 50,
+    height: 50
   }
 });
 
-export function homeButtons() {
+export function HomeButtons() {
   return (
-    <View style={{justifyContent: "center", alignItems: "center" }}>
-      <View style={[styles.container, {flexDirection: "row"}]}>
-        <View style = {styles.tile}>
-          <Text style = {styles.tileText}>
+    <View style={{ justifyContent: "center", alignItems: "center" }}>
+      <View style={styles.rowContainer}>
+        <View style={styles.tile}>
+          <Text style={styles.tileText}>
             Search
           </Text>
-          <View style = {styles.icon}>
-            <Image source = {require('./search.svg')} style = {styles.icon}/>
+          <View style={styles.iconContainer}>
+            <Image style={styles.icon} source={require('../assets/images/search.svg')} />
           </View>
         </View>
-        
-        <View style = {styles.tile}>
-          <Text style = {styles.tileText}>
+
+        <View style={styles.tile}>
+          <Text style={styles.tileText}>
             Scan
           </Text>
-          <View style = {styles.icon}>
-            <Image source = {require('./scan.svg')} style = {styles.icon}/>
+          <View style={styles.iconContainer}>
+            <Image style={styles.icon} source={require('../assets/images/scan.svg')} />
           </View>
         </View>
       </View>
 
-      <View style={[styles.container, {flexDirection: "row"}]}>
-        <View style = {styles.tile}>
-          <Text style = {styles.tileText}>
+      <View style={styles.rowContainer}>
+        <View style={styles.tile}>
+          <Text style={styles.tileText}>
             News
           </Text>
-          <View style = {styles.icon}>
-            <Image source = {require('./news.svg')} style = {styles.icon}/>
+          <View style={styles.iconContainer}>
+            <Image style={{ width: 45, height: 40 }} source={require('../assets/images/news.svg')} />
           </View>
         </View>
 
-        <View style = {styles.tile}>
-          <Text style = {styles.tileText}>
+        <View style={styles.tile}>
+          <Text style={styles.tileText}>
             Upcycle
           </Text>
-          <View style = {styles.icon}>
-            <Image source = {require('./upcycle.svg')} style = {styles.icon}/>
+          <View style={styles.iconContainer}>
+            <Image style={{ width: 35, height: 50 }} source={require('../assets/images/upcycle.svg')} />
           </View>
         </View>
       </View>
