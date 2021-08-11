@@ -34,7 +34,7 @@ export default function CreateAccountPage3() {
       <Text style={styles.slidebar}>[Slidebar goes here]</Text>
       <BlackButton onPress={() => {
         console.log('CA2 page next button press');
-      }} text='Next >' />
+      }}>{'Next >'}</BlackButton>
       <Text>Changes can be made later under Settings.</Text>
     </View>
   );

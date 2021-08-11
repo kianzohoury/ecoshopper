@@ -2,11 +2,10 @@ import * as React from 'react';
 import { StyleSheet, Text, TextInput } from 'react-native';
 import { useTheme, NavigationContainer } from '@react-navigation/native';
 
-import { BlackButton } from '../components/BlackButton';
 import { View } from '../components/Themed';
+import { HomeButtons } from '../components/HomeButtons';
 
-export default function CreateAccountPage1({ navigation }: { navigation: any }) {
-  const [text, onChangeText] = React.useState('');
+export default function HomeButtonsScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();
 
   const styles = StyleSheet.create({
@@ -33,21 +32,7 @@ export default function CreateAccountPage1({ navigation }: { navigation: any }) 
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>What is your name? </Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={onChangeText}
-        value={text}
-      />
-      <BlackButton onPress={() => {
-        console.log(`You inputted ${text}`);
-        navigation.navigate('CA2');
-      }}>{'Next >'}</BlackButton>
-
-      {/* temp */}
-      <BlackButton onPress={() => { navigation.navigate('Scan') }}>Scan</BlackButton>
-      <BlackButton onPress={() => { navigation.navigate('HomeScreen') }}>Home</BlackButton>
-
+      <HomeButtons></HomeButtons>
     </View>
   );
 }

@@ -8,7 +8,7 @@ const vh = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   newsTile: {
     backgroundColor: 'rgba(0, 0, 0, 0.10)',
-    height: 150,    
+    height: 150,
     width: 0.9 * vw,
     borderRadius: 4
   },
@@ -27,16 +27,16 @@ const styles = StyleSheet.create({
   }
 });
 
-export function newsPreview() {
+export function NewsPreview() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <View style = {styles.newsTile}>
-        <Text style = {styles.newsTitle}>
+      <View style={styles.newsTile}>
+        <Text style={styles.newsTitle}>
           Five things we have learned from the IPCC report
-        </Text> 
-        <Text style = {styles.newsDate}>
+        </Text>
+        <Text style={styles.newsDate}>
           August 7th, 2021
-        </Text> 
+        </Text>
       </View>
     </View>
   );

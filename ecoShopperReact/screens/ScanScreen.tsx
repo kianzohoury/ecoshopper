@@ -66,12 +66,13 @@ export default function ScanScreen() {
 
   const barcodeHandler = (result: BarCodeScanningResult) => {
     console.log(`type: ${result.type}, data: ${result.data}`);
+    alert(`type: ${result.type}, data: ${result.data}`);
 
     const getResult = (code: any) => fetch(`http://192.168.4.102:8000/ecoshopper/barcode/${code}`)
       .then(resp => resp.json())
       .then(json => {
         console.log(json);
-        alert(`${json.upc}, ${json.object}`)
+        alert(`from api: ${json.upc}, ${json.object}`)
       })
       .catch(err => console.error(err));
     getResult(result.data);
