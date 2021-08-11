@@ -17,6 +17,8 @@ import LoginScreen from './screens/LoginScreen'
 import ScanScreen from './screens/ScanScreen';
 import HomeButtonsScreen from './screens/homeButtonsScreen';
 import HomeScreen from './screens/HomeScreen';
+import NotFoundScreen from './screens/NotFoundScreen';
+import FoundScreen from './screens/FoundScreen';
 
 const Stack = createStackNavigator();
 
@@ -44,6 +46,8 @@ export default function App() {
         <Stack.Screen name="CA3" component={CreateAccountPage3} options={{ headerShown: false }} />
         <Stack.Screen name="Scan" component={ScanScreen} options={{}} />
         <Stack.Screen name="Loading" component={CreateLoadingPage} options={{ headerShown: false }} />
+        <Stack.Screen name="NotFoundScreen" component={NotFoundScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Found" component={FoundScreen} options={{ headerShown: false }} />
         <Stack.Screen name="HomeButtonsScreen" component={HomeButtonsScreen} options={{ title: 'Welcome, User.' }} />
       </Stack.Navigator>
     </NavigationContainer>

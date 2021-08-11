@@ -36,7 +36,12 @@ export default function CreateAccountPage2({ navigation }: { navigation: any }) 
         console.log('CA2 page next button press');
         navigation.navigate('CA3');
       }}>{'Next >'}</BlackButton>
+      <BlackButton onPress={() => {
+        navigation.navigate('NotFoundScreen');
+      }}>{'Not >'}</BlackButton>
+      <BlackButton onPress={() => {
+        navigation.navigate('FoundScreen');
+      }}>{'Found'}</BlackButton>
     </View>
   );
 }
-
