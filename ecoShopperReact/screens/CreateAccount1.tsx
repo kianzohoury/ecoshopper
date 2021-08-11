@@ -3,6 +3,7 @@ import { StyleSheet, Text, TextInput } from 'react-native';
 import { useTheme, NavigationContainer } from '@react-navigation/native';
 
 import { BlackButton } from '../components/BlackButton';
+import { BlackButtonBorder } from '../components/BlackButtonBorder';
 import { View } from '../components/Themed';
 
 export default function CreateAccountPage1({ navigation }: { navigation: any }) {
@@ -46,8 +47,6 @@ export default function CreateAccountPage1({ navigation }: { navigation: any }) 
 
       {/* temp */}
       <BlackButton onPress={() => { navigation.navigate('Scan') }} text='Scan' />
-
     </View>
   );
 }
-

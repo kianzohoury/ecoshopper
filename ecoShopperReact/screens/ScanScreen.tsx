@@ -3,7 +3,7 @@ import { Dimensions, StyleSheet, Text, View, Pressable } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { BarCodeScanningResult, Camera } from 'expo-camera';
 
-export default function ScanScreen() {
+export default function ScanScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();
   const [hasPermission, setHasPermission] = React.useState<Boolean | null>(null);
   const [type, setType] = React.useState(Camera.Constants.Type.back);
@@ -66,14 +66,15 @@ export default function ScanScreen() {
 
   const barcodeHandler = (result: BarCodeScanningResult) => {
     console.log(`type: ${result.type}, data: ${result.data}`);
+    navigation.navigate('Loading');
 
-    const getResult = (code: any) => fetch(`http://192.168.4.102:8000/ecoshopper/barcode/${code}`)
+    const getResult = (code: any) => fetch(`http://localhost:8000/ecoshopper/barcode/${code}`)
       .then(resp => resp.json())
       .then(json => {
-        console.log(json);
-        alert(`${json.upc}, ${json.object}`)
+        console.log(resp);
+        alert(`${json.upc}, ${json.object}`);
       })
-      .catch(err => console.error(err));
+      .catch(err => console.error(err))
     getResult(result.data);
   }
 
@@ -118,4 +119,3 @@ export default function ScanScreen() {
     </View>
   );
 }
-
