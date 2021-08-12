@@ -9,20 +9,19 @@ export function BlackButtonBorder({ text, onPress, bordered = false }:
       {
         backgroundColor: (pressed ? 'black' : 'transparent'),
         paddingVertical: 15,
-        paddingHorizontal: 60,
+        paddingHorizontal: 100,
         maxWidth: '100%',
         borderColor: 'black',
         borderWidth: 3,
         borderRadius: 5,
-        paddingHorizontal: 100,
       }
     ]}
   >
     {({ pressed }) => (
       <Text style={{
         color: bordered ? 'black' : pressed ? 'white' : 'black',
-        fontWeight: '600',
-        fontSize: 20
+        fontWeight: 'bold',
+        fontSize: 20,
       }}>{text}</Text>
     )}
 

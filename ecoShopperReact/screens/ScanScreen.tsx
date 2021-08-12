@@ -69,15 +69,15 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
     navigation.navigate('Loading');
 
     const getResult = (code: any) =>
-      // fetch(`http://406dc019047f.ngrok.io/ecoshopper/barcode/${code}`)
-      // .then(resp => resp.json())
-      Promise.resolve({
-        "eco score": 80,
-        "object": "Crayola Colored Pencils",
-        "recyclable": false,
-        "reusable": true,
-        "upc": 71662040246
-      })
+      // Promise.resolve({
+      //   "eco score": 80,
+      //   "object": "Crayola Colored Pencils",
+      //   "recyclable": false,
+      //   "reusable": true,
+      //   "upc": 71662040246
+      // })
+      fetch(`http://04a5ebc15b16.ngrok.io/ecoshopper/barcode/${code}`)
+        .then(resp => resp.json())
         .then(json => {
           console.log(json);
           navigation.dispatch(StackActions.pop(2));

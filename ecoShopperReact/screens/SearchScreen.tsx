@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 import { useTheme, NavigationContainer } from '@react-navigation/native';
+import { Searchbar } from 'react-native-paper';
 
 import { BlackButton } from '../components/BlackButton';
 import { HomeEcoScore } from '../components/HomeEcoScore';
@@ -9,13 +10,17 @@ import { HomeHistory } from '../components/HomeHistory';
 
 export default function SearchScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const onChangeSearch = (query: string) => setSearchQuery(query);
 
   const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'flex-start',
-      backgroundColor: colors.background
+      backgroundColor: colors.background,
+      paddingTop: 30,
+      paddingHorizontal: 20
     },
     imageBackground: {
       width: '100%',
@@ -39,7 +44,11 @@ export default function SearchScreen({ navigation }: { navigation: any }) {
 
   return (
     <View style={styles.container}>
-      <Text>SearchScreen</Text>
+      <Searchbar
+        placeholder="Search"
+        onChangeText={onChangeSearch}
+        value={searchQuery}
+      />
     </View>
   );
 }

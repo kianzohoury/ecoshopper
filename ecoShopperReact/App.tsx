@@ -27,7 +27,7 @@ import HomeButtonsScreen from './screens/homeButtonsScreen';
 import NotFoundScreen from './screens/NotFoundScreen';
 import FoundScreen from './screens/FoundScreen';
 import CreateLocationScreen from './screens/LocationScreen';
-import TabTwoScreen from './screens/TabTwoScreen';
+import HistoryScreen from './screens/HistoryScreen';
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -44,11 +44,12 @@ const MyTheme = {
   },
 };
 
-function TabsScreen({ navigation }: { navigation: any }) {
+function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
   return (
     <Tab.Navigator
       initialRouteName="Home"
       shifting={true}
+      backBehavior="initialRoute"
       barStyle={{ backgroundColor: MyTheme.colors.background, height: 60 }}
     >
       <Tab.Screen
@@ -72,6 +73,7 @@ function TabsScreen({ navigation }: { navigation: any }) {
       <Tab.Screen
         name="Home"
         component={HomeScreen}
+        initialParams={{ user: 'User' }}
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="stats-chart" color={color} size={24} />
@@ -80,7 +82,7 @@ function TabsScreen({ navigation }: { navigation: any }) {
       />
       <Tab.Screen
         name="Upcycle"
-        component={FoundScreen}
+        component={CreateAccountPage2}
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="bulb-outline" color={color} size={24} />
@@ -103,12 +105,17 @@ function TabsScreen({ navigation }: { navigation: any }) {
 export default function App() {
   return (
     <NavigationContainer theme={MyTheme} >
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Tabs">
         <Stack.Screen name="Tabs" component={TabsScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="CA1" component={CreateAccountPage1} options={{ headerShown: false }} />
+        <Stack.Screen name="CA2" component={CreateAccountPage2} options={{ headerShown: false }} />
+        <Stack.Screen name="CA3" component={CreateAccountPage3} options={{ headerShown: false }} />
         <Stack.Screen name="Scan" component={ScanScreen} options={{}} />
         <Stack.Screen name="Loading" component={CreateLoadingPage} options={{ headerShown: false }} />
         <Stack.Screen name="NotFoundScreen" component={NotFoundScreen} options={{ headerShown: false }} />
         <Stack.Screen name="FoundScreen" component={FoundScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="History" component={HistoryScreen} options={{}} />
       </Stack.Navigator>
     </NavigationContainer>
   )

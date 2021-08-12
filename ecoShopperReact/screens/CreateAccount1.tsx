@@ -42,14 +42,8 @@ export default function CreateAccountPage1({ navigation }: { navigation: any }) 
       />
       <BlackButton onPress={() => {
         console.log(`You inputted ${text}`);
-        navigation.navigate('CA2');
+        navigation.navigate('CA2', { user: text });
       }}>{'Next >'}</BlackButton>
-
-      {/* temp */}
-      <BlackButton onPress={() => {
-        navigation.navigate('Scan')}} text='Create Account'>Scan</BlackButton>
-      <BlackButton onPress={() => { navigation.navigate('HomeScreen') }}>Home</BlackButton>
-      <BlackButton onPress={() => { navigation.navigate('LocationScreen') }}>Location</BlackButton>
     </View>
   );
 }

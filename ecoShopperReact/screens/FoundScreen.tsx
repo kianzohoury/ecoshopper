@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, ScrollView, View } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Image } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -87,9 +87,12 @@ export default function FoundScreen({ route, navigation }: { route: any, navigat
 
       <View style={styles.rect}>
         <View style={{ alignItems: "center" }}>
-          <View style={styles.ellipse}>
-            <Ionicons name="camera" color="#000" size={32} />
-          </View>
+          {route.params?.img_link
+            ? <Image style={styles.ellipse} source={{ uri: route.params?.img_link }} />
+            : <View style={styles.ellipse}>
+              <Ionicons name="camera" color="#000" size={32} />
+            </View>
+          }
           <Text style={styles.subTitleText}>{route.params?.object}</Text>
         </View>
 
@@ -111,8 +114,8 @@ export default function FoundScreen({ route, navigation }: { route: any, navigat
 
           <View style={styles.container}>
             <Text style={styles.titleText}>Eco Score</Text>
-            <Text style={{ fontSize: 24, color: "#70B241", fontWeight: "bold" }}>
-              {route.params?.eco_score && 'A-'}
+            <Text style={{ fontSize: 24, color: "#70B241", fontWeight: "bold", marginRight: 10 }}>
+              {route.params?.eco_score}
             </Text>
           </View>
         </View>
