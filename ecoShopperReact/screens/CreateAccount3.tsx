@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { StyleSheet, Text, TextInput } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import { useTheme, StackActions } from '@react-navigation/native';
 
 import { BlackButton } from '../components/BlackButton';
 import { View } from '../components/Themed';
+import GoalBubbles from '../components/GoalBubbles';
 
-export default function CreateAccountPage3() {
+export default function CreateAccountPage3({ navigation, route }: { navigation: any, route: any }) {
   const { colors } = useTheme();
 
   const styles = StyleSheet.create({
@@ -31,11 +32,12 @@ export default function CreateAccountPage3() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tap your goals below. </Text>
-      <Text style={styles.slidebar}>[Slidebar goes here]</Text>
+      <GoalBubbles />
       <BlackButton onPress={() => {
-        console.log('CA2 page next button press');
+        navigation.dispatch(StackActions.popToTop())
+        navigation.navigate('Tabs', { user: route.param?.user });
       }}>{'Next >'}</BlackButton>
-      <Text>Changes can be made later under Settings.</Text>
+      <Text style={{ marginTop: 10 }}>Changes can be made later under Settings.</Text>
     </View>
   );
 }
