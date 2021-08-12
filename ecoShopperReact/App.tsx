@@ -1,10 +1,18 @@
 import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { View, Text } from 'react-native';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
+import { View, Text, StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+
+import HomeScreen from './screens/HomeScreen';
+import NewsScreen from './screens/NewsScreen';
+import SearchScreen from './screens/SearchScreen';
+import SettingsScreen from './screens/SettingsScreen';
+import UpcycleScreen from './screens/UpcycleScreen';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
@@ -16,17 +24,18 @@ import CreateLoadingPage from './screens/Loading'
 import LoginScreen from './screens/LoginScreen'
 import ScanScreen from './screens/ScanScreen';
 import HomeButtonsScreen from './screens/homeButtonsScreen';
-import HomeScreen from './screens/HomeScreen';
 import NotFoundScreen from './screens/NotFoundScreen';
 import CreateFoundScreen from './screens/FoundScreen';
 import CreateLocationScreen from './screens/LocationScreen';
+import TabTwoScreen from './screens/TabTwoScreen';
 
 const Stack = createStackNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 const MyTheme = {
   dark: false,
   colors: {
-    primary: '#000000',
+    primary: '#FDD329',
     background: '#FDD329',
     card: '#FDD329',
     text: '#000000',
@@ -35,26 +44,94 @@ const MyTheme = {
   },
 };
 
+function TabsScreen() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Home"
+      shifting={true}
+      barStyle={{ backgroundColor: MyTheme.colors.background, height: 60 }}
+    >
+      <Tab.Screen
+        name="News"
+        component={NewsScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="newspaper-outline" color={color} size={24} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="search" color={color} size={24} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="stats-chart" color={color} size={24} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Upcycle"
+        component={UpcycleScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="bulb-outline" color={color} size={24} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="settings-outline" color={color} size={24} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  )
+}
 
 export default function App() {
   return (
     <NavigationContainer theme={MyTheme}>
       <Stack.Navigator>
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ title: 'Welcome, User.' }} />
-        <Stack.Screen name="CA1" component={CreateAccountPage1} options={{ headerShown: false }} />
-        <Stack.Screen name="CA2" component={CreateAccountPage2} options={{ headerShown: false }} />
-        <Stack.Screen name="CA3" component={CreateAccountPage3} options={{ headerShown: false }} />
+        <Stack.Screen name="Tabs" component={TabsScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Scan" component={ScanScreen} options={{}} />
-        <Stack.Screen name="Loading" component={CreateLoadingPage} options={{ headerShown: false }} />
-        <Stack.Screen name="NotFoundScreen" component={NotFoundScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="FoundScreen" component={CreateFoundScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="LocationScreen" component={CreateLocationScreen} options={{  headerShown: false }} />
-        <Stack.Screen name="HomeButtonsScreen" component={HomeButtonsScreen} options={{ title: 'Welcome, User.' }} />
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
+
+
+
+// export default function App() {
+//   return (
+//     <NavigationContainer theme={MyTheme}>
+//       <Stack.Navigator>
+//         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ title: 'Welcome, User.' }} />
+//         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
+//         <Stack.Screen name="CA1" component={CreateAccountPage1} options={{ headerShown: false }} />
+//         <Stack.Screen name="CA2" component={CreateAccountPage2} options={{ headerShown: false }} />
+//         <Stack.Screen name="CA3" component={CreateAccountPage3} options={{ headerShown: false }} />
+//         <Stack.Screen name="Scan" component={ScanScreen} options={{}} />
+//         <Stack.Screen name="Loading" component={CreateLoadingPage} options={{ headerShown: false }} />
+//         <Stack.Screen name="NotFoundScreen" component={NotFoundScreen} options={{ headerShown: false }} />
+//         <Stack.Screen name="FoundScreen" component={CreateFoundScreen} options={{ headerShown: false }} />
+//         <Stack.Screen name="LocationScreen" component={CreateLocationScreen} options={{ headerShown: false }} />
+//         <Stack.Screen name="HomeButtonsScreen" component={HomeButtonsScreen} options={{ title: 'Welcome, User.' }} />
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   )
+// }
 
 
 // export default function App() {
