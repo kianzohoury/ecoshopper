@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
   pointContainer: {
     flexDirection: 'row',
     alignItems: 'flex-end',
-    marginBottom: 50
+    marginBottom: 50,
+    paddingLeft: 30
   },
   point: {
     fontSize: 72,

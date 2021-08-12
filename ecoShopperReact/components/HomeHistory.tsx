@@ -3,10 +3,10 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const histories = [
   { name: 'Tide Laundry Liquid Detergent', date: '08-05-2021', pointAdded: 1 },
-  { name: 'Tide Laundry Liquid Detergent', date: '08-05-2021', pointAdded: 1 },
-  { name: 'Tide Laundry Liquid Detergent', date: '08-05-2021', pointAdded: 1 },
-  { name: 'Tide Laundry Liquid Detergent', date: '08-05-2021', pointAdded: 1 },
-  { name: 'Tide Laundry Liquid Detergent', date: '08-05-2021', pointAdded: 1 }
+  { name: 'Tide Laundry Liquid Detergent1', date: '08-05-2021', pointAdded: 1 },
+  { name: 'Tide Laundry Liquid Detergent2', date: '08-05-2021', pointAdded: 1 },
+  { name: 'Tide Laundry Liquid Detergent3', date: '08-05-2021', pointAdded: 1 },
+  { name: 'Tide Laundry Liquid Detergent4', date: '08-05-2021', pointAdded: 1 }
 ]
 
 export function HomeHistory() {
@@ -19,7 +19,7 @@ export function HomeHistory() {
       </View>
     </View>
     {histories.map(hist =>
-      <View style={styles.histContainer}>
+      <View key={hist.name} style={styles.histContainer}>
         <View>
           <Text style={{ fontWeight: '600' }}>{hist.name}</Text>
           <Text style={{ fontWeight: '600', color: '#00000077' }}>{hist.date}</Text>

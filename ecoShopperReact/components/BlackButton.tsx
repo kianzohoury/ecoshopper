@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Text, Pressable, Image, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 export function BlackButton({ children, onPress, bordered = false, icon = null }:
   { children: any, onPress: () => any, bordered?: boolean, icon?: any }) {
@@ -8,13 +9,12 @@ export function BlackButton({ children, onPress, bordered = false, icon = null }
     style={({ pressed }) => [
       {
         backgroundColor: bordered ? (pressed ? 'white' : 'transparent') : (pressed ? 'transparent' : 'black'),
-        paddingVertical: 15,
+        paddingVertical: icon ? 8 : 15,
         paddingHorizontal: 60,
         maxWidth: '100%',
         borderColor: 'black',
         borderWidth: 3,
         borderRadius: 5,
-        paddingHorizontal: 100,
         textAlign: 'center',
         alignItems: 'center'
       }
@@ -31,10 +31,9 @@ export function BlackButton({ children, onPress, bordered = false, icon = null }
           fontSize: 20,
           marginRight: 10,
         }}>{children}</Text>
-        <Image style={{
-          width: 40,
-          height: 40
-        }} source={icon} />
+        {icon &&
+          <Ionicons name={icon.name} color={icon.color} size={40} />
+        }
       </View>
     )}
 

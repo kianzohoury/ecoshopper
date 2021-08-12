@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Dimensions, StyleSheet, Text, View, Pressable } from 'react-native';
+import { Dimensions, StyleSheet, Text, View, Pressable, StatusBar } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { BarCodeScanningResult, Camera } from 'expo-camera';
-import { CreateFoundScreen } from './FoundScreen';
 
 export default function ScanScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();
@@ -69,13 +68,11 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
     console.log(`type: ${result.type}, data: ${result.data}`);
     navigation.navigate('Loading');
 
-    const getResult = (code: any) => fetch(`http://192.168.254.10:8000/ecoshopper/barcode/${code}`)
+    const getResult = (code: any) => fetch(`http://406dc019047f.ngrok.io/ecoshopper/barcode/${code}`)
       .then(resp => resp.json())
       .then(json => {
         console.log(json);
-        navigation.navigate('FoundScreen', {
-          result: "hello"
-        });
+        navigation.navigate('FoundScreen', json);
         // alert(`from api: ${json.upc}, ${json.object}`)
       })
       .catch(err => {
@@ -87,14 +84,18 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
 
   return (
     <View style={styles.container}>
-      <Camera
-        style={styles.camera}
-        type={type}
-        flashMode={flash}
-        onBarCodeScanned={barcodeHandler}
-      >
-        <View style={styles.barcodeBox}></View>
-      </Camera>
+      <StatusBar animated={true} backgroundColor={colors.background} barStyle="dark-content" />
+      {hasPermission
+        ? <Camera
+          style={styles.camera}
+          type={type}
+          flashMode={flash}
+          onBarCodeScanned={barcodeHandler}
+        >
+          <View style={styles.barcodeBox}></View>
+        </Camera>
+        : <View style={styles.camera}></View>
+      }
       <View style={styles.bottomContainer}>
         <Text style={styles.text}>Use Camera to Scan Code</Text>
         <View style={styles.buttonContainer}>
