@@ -4,7 +4,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { Ionicons } from '@expo/vector-icons';
 import { View, Text, StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer, DefaultTheme, TabRouter } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, TabRouter, useFocusEffect } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
@@ -73,7 +73,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
       <Tab.Screen
         name="Home"
         component={HomeScreen}
-        initialParams={{ user: 'User' }}
+        initialParams={{ user: route.params?.user && 'User', score: 900 }}
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="stats-chart" color={color} size={24} />
@@ -82,7 +82,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
       />
       <Tab.Screen
         name="Upcycle"
-        component={CreateAccountPage2}
+        component={UpcycleScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="bulb-outline" color={color} size={24} />

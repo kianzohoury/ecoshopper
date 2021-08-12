@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-export function HomeEcoScore({ point }: { point: string }) {
+export function HomeEcoScore({ point }: { point: number }) {
   return <View>
     <Text style={styles.title}>Your Eco Score</Text>
     <View style={styles.pointContainer}>

@@ -51,7 +51,7 @@ export default function HomeScreen({ navigation, route }: { navigation: any, rou
       <CirclesSvg style={styles.svgBackground} />
       <View>
         <Text style={styles.title}>Welcome, {route.params?.user}. </Text>
-        <HomeEcoScore point="1234" />
+        <HomeEcoScore point={route.params?.score} />
         <BlackButton onPress={() => navigation.navigate('Scan')} icon={{ name: 'barcode-outline', color: '#fff' }}>
           Scan
         </BlackButton>

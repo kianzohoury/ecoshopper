@@ -35,7 +35,10 @@ export default function CreateAccountPage3({ navigation, route }: { navigation: 
       <GoalBubbles />
       <BlackButton onPress={() => {
         navigation.dispatch(StackActions.popToTop())
-        navigation.navigate('Tabs', { user: route.param?.user });
+        navigation.navigate('Tabs', {
+          screen: 'Home',
+          params: { user: route.params?.user, score: 102 }
+        });
       }}>{'Next >'}</BlackButton>
       <Text style={{ marginTop: 10 }}>Changes can be made later under Settings.</Text>
     </View>

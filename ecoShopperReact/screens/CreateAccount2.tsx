@@ -48,7 +48,7 @@ export default function CreateAccountPage2({ navigation, route }: { navigation: 
       <View style={{ width: '100%', alignItems: 'center', paddingHorizontal: 20, marginVertical: 20 }}>
         <View style={{ flexDirection: 'row', width: 305, paddingRight: 5, justifyContent: 'space-between', marginBottom: -40 }}>
           {[...Array(9).keys()].map(n => (
-            <View style={{ height: 30, width: 4, backgroundColor: Colors.amber700 }}>
+            <View key={n} style={{ height: 30, width: 4, backgroundColor: Colors.amber700 }}>
             </View>))}
         </View>
         <MultiSlider
@@ -70,8 +70,8 @@ export default function CreateAccountPage2({ navigation, route }: { navigation: 
         </View>
       </View>
       <BlackButton onPress={() => {
-        console.log('CA2 page next button press');
-        navigation.navigate('CA3', { user: route.param?.user });
+        console.log('CA2 page: ', route.params);
+        navigation.navigate('CA3', { user: route.params?.user });
       }}>{'Next >'}</BlackButton>
     </View>
   );
