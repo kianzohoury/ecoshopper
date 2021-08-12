@@ -168,3 +168,6 @@ web-build/
 
 # macOS
 .DS_Store
+
+# models
+final/ecoshopper/prediction

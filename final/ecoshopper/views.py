@@ -9,13 +9,12 @@ from .prediction.predict import get_prediction
 import gdown
 import os
 import torch
-
+import pathlib
 
 # Download model state
 # url = 'https://drive.google.com/drive/u/0/folders/1kme1P1f_Dcly31rDtXDImtXa9amaYJ9B'
 # make sure to be in final-project directory
-model_state_path = '/ecoshopper/prediction/combined_model.pth'
-full_path = os.getcwd() + model_state_path
+full_path = pathlib.Path.cwd().joinpath('ecoshopper', 'prediction', 'combined_model.pth')
 # gdown.download(url, model_state_path, quiet=False)
 
 # Load model state from .pth file

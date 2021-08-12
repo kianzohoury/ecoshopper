@@ -4,7 +4,7 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { Ionicons } from '@expo/vector-icons';
 import { View, Text, StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, TabRouter } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
@@ -44,7 +44,7 @@ const MyTheme = {
   },
 };
 
-function TabsScreen() {
+function TabsScreen({ navigation }: { navigation: any }) {
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -102,10 +102,13 @@ function TabsScreen() {
 
 export default function App() {
   return (
-    <NavigationContainer theme={MyTheme}>
+    <NavigationContainer theme={MyTheme} >
       <Stack.Navigator>
         <Stack.Screen name="Tabs" component={TabsScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Scan" component={ScanScreen} options={{}} />
+        <Stack.Screen name="Loading" component={CreateLoadingPage} options={{ headerShown: false }} />
+        <Stack.Screen name="NotFoundScreen" component={NotFoundScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="FoundScreen" component={CreateFoundScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   )

@@ -30,9 +30,10 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
       left: 0
     },
     title: {
-      fontSize: 30,
-      fontWeight: 'bold',
-      marginBottom: 100
+      fontSize: 24,
+      fontWeight: '600',
+      marginTop: 20,
+      textAlign: 'center'
     },
     input: {
       fontSize: 30,
@@ -49,6 +50,7 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
       <StatusBar animated={true} backgroundColor={colors.background} barStyle="dark-content" />
       <CirclesSvg style={styles.svgBackground} />
       <View>
+        <Text style={styles.title}>Welcome, User. </Text>
         <HomeEcoScore point="1234" />
         <BlackButton onPress={() => navigation.navigate('Scan')} icon={{ name: 'barcode-outline', color: '#fff' }}>
           Scan
