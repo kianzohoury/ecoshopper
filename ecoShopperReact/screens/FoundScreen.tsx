@@ -7,11 +7,8 @@ import { BlackButtonBorder } from '../components/BlackButtonBorder';
 import { View } from '../components/Themed';
 
 
-export default function CreateFoundScreen({ route, navigation }) {
+export default function FoundScreen({ route, navigation }: { route: any, navigation: any }) {
   const { colors } = useTheme();
-  const { result } = route.params;
-
-  navigation.navigate('FoundScreen');
 
   const styles = StyleSheet.create({
     container: {

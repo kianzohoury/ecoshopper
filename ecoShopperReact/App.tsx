@@ -25,7 +25,7 @@ import LoginScreen from './screens/LoginScreen'
 import ScanScreen from './screens/ScanScreen';
 import HomeButtonsScreen from './screens/homeButtonsScreen';
 import NotFoundScreen from './screens/NotFoundScreen';
-import CreateFoundScreen from './screens/FoundScreen';
+import FoundScreen from './screens/FoundScreen';
 import CreateLocationScreen from './screens/LocationScreen';
 import TabTwoScreen from './screens/TabTwoScreen';
 
@@ -108,7 +108,7 @@ export default function App() {
         <Stack.Screen name="Scan" component={ScanScreen} options={{}} />
         <Stack.Screen name="Loading" component={CreateLoadingPage} options={{ headerShown: false }} />
         <Stack.Screen name="NotFoundScreen" component={NotFoundScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="FoundScreen" component={CreateFoundScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="FoundScreen" component={FoundScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   )
