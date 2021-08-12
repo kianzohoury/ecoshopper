@@ -45,9 +45,13 @@ def barcode(request: HttpRequest, upc_code: int):
     Returns:
         JsonResponse: the JSON data for the frontend to display.
     """
-    image, title, class_label = get_prediction(model, upc_code, num_results=5,
-                                    size=(300, 300), view="")
-
+    image, title, link, img_link, class_label = get_prediction(
+                                                    model,
+                                                    upc_code,
+                                                    num_results=5,
+                                                    size=(300, 300),
+                                                    view=""
+                                                    )
     return JsonResponse({
         'upc': upc_code,
         'object': title,
