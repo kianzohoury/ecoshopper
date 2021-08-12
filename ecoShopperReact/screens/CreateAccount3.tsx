@@ -4,7 +4,7 @@ import { useTheme, StackActions } from '@react-navigation/native';
 
 import { BlackButton } from '../components/BlackButton';
 import { View } from '../components/Themed';
-import GoalBubbles from '../components/GoalBubbles';
+import GoalBubbles from '../components/goalBubbles';
 
 export default function CreateAccountPage3({ navigation, route }: { navigation: any, route: any }) {
   const { colors } = useTheme();
@@ -44,4 +44,3 @@ export default function CreateAccountPage3({ navigation, route }: { navigation: 
     </View>
   );
 }
-
