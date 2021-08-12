@@ -18,7 +18,8 @@ import ScanScreen from './screens/ScanScreen';
 import HomeButtonsScreen from './screens/homeButtonsScreen';
 import HomeScreen from './screens/HomeScreen';
 import NotFoundScreen from './screens/NotFoundScreen';
-import FoundScreen from './screens/FoundScreen';
+import CreateFoundScreen from './screens/FoundScreen';
+import CreateLocationScreen from './screens/LocationScreen';
 
 const Stack = createStackNavigator();
 
@@ -47,7 +48,8 @@ export default function App() {
         <Stack.Screen name="Scan" component={ScanScreen} options={{}} />
         <Stack.Screen name="Loading" component={CreateLoadingPage} options={{ headerShown: false }} />
         <Stack.Screen name="NotFoundScreen" component={NotFoundScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Found" component={FoundScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="FoundScreen" component={CreateFoundScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="LocationScreen" component={CreateLocationScreen} options={{  headerShown: false }} />
         <Stack.Screen name="HomeButtonsScreen" component={HomeButtonsScreen} options={{ title: 'Welcome, User.' }} />
       </Stack.Navigator>
     </NavigationContainer>
