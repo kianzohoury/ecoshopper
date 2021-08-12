@@ -32,7 +32,7 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
     title: {
       fontSize: 24,
       fontWeight: '600',
-      marginTop: 20,
+      marginTop: 40,
       textAlign: 'center'
     },
     input: {

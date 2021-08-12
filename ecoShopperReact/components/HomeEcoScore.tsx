@@ -14,7 +14,7 @@ export function HomeEcoScore({ point }: { point: string }) {
 const styles = StyleSheet.create({
   title: {
     fontSize: 20,
-    marginTop: 50,
+    marginTop: 30,
     fontWeight: '600',
     textAlign: 'center'
   },

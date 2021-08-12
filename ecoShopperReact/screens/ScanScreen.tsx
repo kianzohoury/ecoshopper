@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Dimensions, StyleSheet, Text, View, Pressable, StatusBar } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import { useTheme, StackActions } from '@react-navigation/native';
 import { BarCodeScanningResult, Camera } from 'expo-camera';
 
 export default function ScanScreen({ navigation }: { navigation: any }) {
@@ -68,17 +68,26 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
     console.log(`type: ${result.type}, data: ${result.data}`);
     navigation.navigate('Loading');
 
-    const getResult = (code: any) => fetch(`http://406dc019047f.ngrok.io/ecoshopper/barcode/${code}`)
-      .then(resp => resp.json())
-      .then(json => {
-        console.log(json);
-        navigation.navigate('FoundScreen', json);
-        // alert(`from api: ${json.upc}, ${json.object}`)
+    const getResult = (code: any) =>
+      // fetch(`http://406dc019047f.ngrok.io/ecoshopper/barcode/${code}`)
+      // .then(resp => resp.json())
+      Promise.resolve({
+        "eco score": 80,
+        "object": "Crayola Colored Pencils",
+        "recyclable": false,
+        "reusable": true,
+        "upc": 71662040246
       })
-      .catch(err => {
-        console.error(err);
-        navigation.navigate('NotFoundScreen');
-      })
+        .then(json => {
+          console.log(json);
+          navigation.dispatch(StackActions.pop(2));
+          navigation.navigate('FoundScreen', json);
+          // alert(`from api: ${json.upc}, ${json.object}`)
+        })
+        .catch(err => {
+          console.error(err);
+          navigation.navigate('NotFoundScreen');
+        })
     getResult(result.data);
   }
 

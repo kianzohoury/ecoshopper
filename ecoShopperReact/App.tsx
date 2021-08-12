@@ -80,7 +80,7 @@ function TabsScreen({ navigation }: { navigation: any }) {
       />
       <Tab.Screen
         name="Upcycle"
-        component={UpcycleScreen}
+        component={FoundScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="bulb-outline" color={color} size={24} />
