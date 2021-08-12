@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Dimensions, StyleSheet, Text, View, Pressable } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { BarCodeScanningResult, Camera } from 'expo-camera';
+import { CreateFoundScreen } from './FoundScreen';
 
 export default function ScanScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();
@@ -72,10 +73,15 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
       .then(resp => resp.json())
       .then(json => {
         console.log(json);
-        navigation.navigate('Found');
+        navigation.navigate('FoundScreen', {
+          result: "hello"
+        });
         // alert(`from api: ${json.upc}, ${json.object}`)
       })
-      .catch(err => console.error(err))
+      .catch(err => {
+        console.error(err);
+        navigation.navigate('NotFoundScreen');
+      })
     getResult(result.data);
   }
 

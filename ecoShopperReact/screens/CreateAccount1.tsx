@@ -15,19 +15,19 @@ export default function CreateAccountPage1({ navigation }: { navigation: any }) 
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: colors.background
+      backgroundColor: colors.background,
     },
     title: {
       fontSize: 30,
       fontWeight: 'bold',
-      marginBottom: 100
+      marginBottom: 100,
     },
     input: {
       fontSize: 30,
       width: 300,
       textAlign: 'center',
       marginBottom: 100,
-      borderBottomWidth: 2
+      borderBottomWidth: 2,
     },
   });
 
@@ -46,9 +46,10 @@ export default function CreateAccountPage1({ navigation }: { navigation: any }) 
       }}>{'Next >'}</BlackButton>
 
       {/* temp */}
-      <BlackButton onPress={() => { navigation.navigate('Scan') }} text='Scan' />
-      <BlackButton onPress={() => { navigation.navigate('Scan') }}>Scan</BlackButton>
+      <BlackButton onPress={() => {
+        navigation.navigate('Scan')}} text='Create Account'>Scan</BlackButton>
       <BlackButton onPress={() => { navigation.navigate('HomeScreen') }}>Home</BlackButton>
+      <BlackButton onPress={() => { navigation.navigate('LocationScreen') }}>Location</BlackButton>
     </View>
   );
 }

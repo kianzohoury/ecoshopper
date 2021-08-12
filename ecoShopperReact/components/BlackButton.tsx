@@ -14,19 +14,22 @@ export function BlackButton({ children, onPress, bordered = false, icon = null }
         borderColor: 'black',
         borderWidth: 3,
         borderRadius: 5,
+        paddingHorizontal: 100,
+        textAlign: 'center',
+        alignItems: 'center'
       }
     ]}
   >
     {({ pressed }) => (
       <View style={{
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
       }}>
         <Text style={{
           color: bordered ? 'black' : pressed ? 'black' : 'white',
           fontWeight: '800',
           fontSize: 20,
-          marginRight: 10
+          marginRight: 10,
         }}>{children}</Text>
         <Image style={{
           width: 40,
@@ -37,4 +40,3 @@ export function BlackButton({ children, onPress, bordered = false, icon = null }
 
   </Pressable>
 }
-

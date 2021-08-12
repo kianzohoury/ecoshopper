@@ -7,13 +7,11 @@ import { BlackButtonBorder } from '../components/BlackButtonBorder';
 import { View } from '../components/Themed';
 
 
-function readJSON(json) {
-  return <h1>UPC: {json.upc}</h1>;
-
-}
-
-export default function FoundScreen({ navigation }: { navigation: any}) {
+export default function CreateFoundScreen({ route, navigation }) {
   const { colors } = useTheme();
+  const { result } = route.params;
+
+  navigation.navigate('FoundScreen');
 
   const styles = StyleSheet.create({
     container: {
