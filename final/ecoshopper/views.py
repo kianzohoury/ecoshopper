@@ -10,6 +10,7 @@ import gdown
 import os
 import torch
 import pathlib
+import numpy as np
 
 # Download model state
 # url = 'https://drive.google.com/drive/u/0/folders/1kme1P1f_Dcly31rDtXDImtXa9amaYJ9B'
@@ -55,18 +56,21 @@ def barcode(request: HttpRequest, upc_code: int):
         'upc': upc_code,
         'object': title,
         'recyclable': class_label == "RECYCLABLE",
+        'img_link': str(img_link),
         'reusable': False,
-        'eco score': 80,
-        'alternatives': [
-            {
-                'name': 'toothpaste tablets',
-                'imgUrl': 'https://www.byrdie.com/thmb/zru3dagcpw1H-A-UmcVPy9bU_pc=/900x0/filters:no_upscale():max_bytes(150000):strip_icc()/mint-bottlecopy-d697fb68cd0e4d9e862b77cfbc2a2c69.jpg',
-                'productLink': 'https://www.amazon.com/Sustainable-Toothpaste-Tablets-Fluoride-Essentials/dp/B08TTHQF5Q'
-            },
-            {
-                'name': 'metal tube toothpaste',
-                'imgUrl': 'https://m.media-amazon.com/images/I/71IxL-u9XhL._SL1500_.jpg',
-                'productLink': 'https://www.amazon.com/Davids-Natural-Toothpaste-Antiplaque-Fluoride-Free/dp/B00ZTJC26C'
-            }
-        ]
+        'eco_score': heuristic(title, class_label),
+        'alternatives': get_alternatives(upc_code)
     })
+
+def get_alternatives(upc_code):
+    # alternative_dict = {
+    #
+    # }
+    return ""
+
+def heuristic(title, recyclable):
+    score = 0
+    if recyclable == "RECYCLABLE":
+        score += 2
+    score += np.random.randint(-2, 5)
+    return min(score, 5)
