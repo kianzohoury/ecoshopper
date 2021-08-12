@@ -8,7 +8,7 @@ import { HomeButtons } from '../components/HomeButtons';
 import { HomeHistory } from '../components/HomeHistory';
 import CirclesSvg from '../assets/images/CirclesSvg';
 
-export default function HomeScreen({ navigation }: { navigation: any }) {
+export default function HomeScreen({ navigation, route }: { navigation: any, route: any }) {
   const { colors } = useTheme();
   const screenWidth = Dimensions.get('window').width;
   const styles = StyleSheet.create({
@@ -32,7 +32,7 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
     title: {
       fontSize: 24,
       fontWeight: '600',
-      marginTop: 20,
+      marginTop: 40,
       textAlign: 'center'
     },
     input: {
@@ -50,13 +50,13 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
       <StatusBar animated={true} backgroundColor={colors.background} barStyle="dark-content" />
       <CirclesSvg style={styles.svgBackground} />
       <View>
-        <Text style={styles.title}>Welcome, User. </Text>
-        <HomeEcoScore point="1234" />
+        <Text style={styles.title}>Welcome, {route.params?.user}. </Text>
+        <HomeEcoScore point={route.params?.score} />
         <BlackButton onPress={() => navigation.navigate('Scan')} icon={{ name: 'barcode-outline', color: '#fff' }}>
           Scan
         </BlackButton>
       </View>
-      <HomeHistory />
+      <HomeHistory navigation={navigation} />
     </View>
   );
 }
