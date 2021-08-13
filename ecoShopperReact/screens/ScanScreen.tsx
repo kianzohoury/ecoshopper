@@ -7,7 +7,7 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();
   const [hasPermission, setHasPermission] = React.useState<Boolean | null>(null);
   const [type, setType] = React.useState(Camera.Constants.Type.back);
-  const [flash, setFlash] = React.useState(Camera.Constants.FlashMode.off)
+  const [flash, setFlash] = React.useState(Camera.Constants.FlashMode.off);
   const windowWidth = Dimensions.get('window').width;
 
   React.useEffect(() => {
@@ -68,6 +68,8 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
     console.log(`type: ${result.type}, data: ${result.data}`);
     navigation.navigate('Loading');
 
+    // const { changeScreen } = this.state;
+
     const getResult = (code: any) =>
       // Promise.resolve({
       //   "eco score": 80,
@@ -82,12 +84,16 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
           console.log(json);
           navigation.dispatch(StackActions.pop(2));
           navigation.navigate('FoundScreen', json);
+          // this.setState({ changeScreen: true });
           // alert(`from api: ${json.upc}, ${json.object}`)
         })
         .catch(err => {
           console.error(err);
           navigation.navigate('NotFoundScreen');
         })
+    // if (!changeScreen) {
+    //   getResult(result.data);
+    // }
     getResult(result.data);
   }
 

@@ -50,14 +50,14 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
       initialRouteName="Home"
       shifting={true}
       backBehavior="initialRoute"
-      barStyle={{ backgroundColor: MyTheme.colors.background, height: 60 }}
+      barStyle={{ backgroundColor: MyTheme.colors.background, height: 70}}
     >
       <Tab.Screen
         name="News"
         component={NewsScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons name="newspaper-outline" color={color} size={24} />
+            <Ionicons name="newspaper-outline" color={color} size={22} />
           ),
         }}
       />
@@ -66,7 +66,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
         component={SearchScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons name="search" color={color} size={24} />
+            <Ionicons name="search" color={color} size={22} />
           ),
         }}
       />
@@ -76,7 +76,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
         initialParams={{ user: route.params?.user && 'User', score: 900 }}
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons name="stats-chart" color={color} size={24} />
+            <Ionicons name="stats-chart" color={color} size={22} />
           ),
         }}
       />
@@ -85,7 +85,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
         component={UpcycleScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons name="bulb-outline" color={color} size={24} />
+            <Ionicons name="bulb-outline" color={color} size={22} />
           ),
         }}
       />
@@ -94,7 +94,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
         component={SettingsScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons name="settings-outline" color={color} size={24} />
+            <Ionicons name="settings-outline" color={color} size={22} />
           ),
         }}
       />
