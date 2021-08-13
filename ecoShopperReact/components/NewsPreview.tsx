@@ -16,8 +16,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.10)',
     height: 150,
     width: 0.95 * vw,
-    borderRadius: 10,
-    shadowRadius: 10
+    borderRadius: 4,
+    elevation: 2
   },
   newsTitle: {
     padding: 10,
@@ -45,7 +45,7 @@ export default function NewsPreview({ title, date, picUrl }:
   return (
     <View style={styles.main}>
       <View style={styles.newsTile}>
-        <ImageBackground style={styles.newsTile} imageStyle={{ borderRadius: 10 }} source={{ uri: picUrl }}>
+        <ImageBackground style={styles.newsTile} imageStyle={{ borderRadius: 4 }} source={{ uri: picUrl }}>
           <Text style={styles.newsTitle}>
             {title}
           </Text>
