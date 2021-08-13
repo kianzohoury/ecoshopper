@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { StyleSheet, Text, ScrollView, FlatList } from 'react-native';
-import { useTheme, NavigationContainer } from '@react-navigation/native';
+import { StyleSheet, Text, FlatList } from 'react-native';
+import { useTheme } from '@react-navigation/native';
+import MasonryList from '@react-native-seoul/masonry-list';
 
 import upcycleData from '../assets/jsons/cola_upcycle.json'
 import NewsPreview from '../components/NewsPreview';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function UpcycleScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();

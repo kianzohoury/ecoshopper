@@ -23,11 +23,10 @@ import CreateAccountPage3 from './screens/CreateAccount3';
 import CreateLoadingPage from './screens/Loading'
 import LoginScreen from './screens/LoginScreen'
 import ScanScreen from './screens/ScanScreen';
-import HomeButtonsScreen from './screens/homeButtonsScreen';
 import NotFoundScreen from './screens/NotFoundScreen';
 import FoundScreen from './screens/FoundScreen';
-import CreateLocationScreen from './screens/LocationScreen';
 import HistoryScreen from './screens/HistoryScreen';
+import LocationScreen from './screens/LocationScreen';
 
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -73,7 +72,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
       <Tab.Screen
         name="Home"
         component={HomeScreen}
-        initialParams={{ user: route.params?.user && 'User', score: 900 }}
+        initialParams={{ user: 'User', score: 900 }}
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="stats-chart" color={color} size={24} />
@@ -91,7 +90,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
       />
       <Tab.Screen
         name="Settings"
-        component={SettingsScreen}
+        component={FoundScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="settings-outline" color={color} size={24} />
@@ -105,7 +104,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
 export default function App() {
   return (
     <NavigationContainer theme={MyTheme} >
-      <Stack.Navigator initialRouteName="Tabs">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Tabs" component={TabsScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="CA1" component={CreateAccountPage1} options={{ headerShown: false }} />

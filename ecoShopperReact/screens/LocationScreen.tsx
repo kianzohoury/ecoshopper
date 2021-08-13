@@ -6,7 +6,7 @@ import { BlackButton } from '../components/BlackButton';
 import { BlackButtonBorder } from '../components/BlackButtonBorder';
 import { View } from '../components/Themed';
 
-export default function CreateLocationScreen({ navigation }: { navigation: any }) {
+export default function LocationScreen({ navigation }: { navigation: any }) {
   const [text, onChangeText] = React.useState('');
   const { colors } = useTheme();
 
@@ -14,7 +14,7 @@ export default function CreateLocationScreen({ navigation }: { navigation: any }
 
   const getItem = (data, index) => ({
     id: Math.random().toString(12).substring(0),
-    title: `Recycle Location ${index+1}`
+    title: `Recycle Location ${index + 1}`
   });
 
   const getItemCount = (data) => 10;
@@ -75,7 +75,7 @@ export default function CreateLocationScreen({ navigation }: { navigation: any }
         data={DATA}
         initialNumToRender={4}
         renderItem={({ item }) => <Item title={item.title} />}
-        keyExtractor={item => item.key}
+        keyExtractor={item => item.id}
         getItemCount={getItemCount}
         getItem={getItem}
 
