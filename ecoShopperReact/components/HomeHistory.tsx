@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { SafeAreaView, ScrollView, View, Text, StyleSheet, Pressable } from 'react-native';
 
 const histories = [
   { "item": "Tide Laundry Liquid Detergent", "date": "12 August", "points": 5 },
@@ -17,25 +17,26 @@ const histories = [
 
 export function HomeHistory({ navigation }: { navigation: any }) {
   return <View style={styles.main}>
-    <View style={styles.bar}>
-      <Text style={{ fontSize: 20, fontWeight: 'bold' }}>History</Text>
-      <Pressable
-        style={{ flexDirection: 'row', alignItems: 'center' }}
-        onPress={() => navigation?.navigate('History')}
-      >
-        <Text style={{ color: 'white', fontWeight: '600', fontSize: 12 }}>View All </Text>
-        <Text style={{ color: 'white', fontWeight: '800', fontSize: 20, marginBottom: 4 }}>{'>'}</Text>
-      </Pressable>
-    </View>
-    {histories.map(hist =>
-      <View key={hist.item} style={styles.histContainer}>
-        <View>
-          <Text style={{ fontWeight: '600' }}>{hist.item}</Text>
-          <Text style={{ fontWeight: '600', color: '#00000077' }}>{hist.date}</Text>
-        </View>
-        <Text style={{ fontWeight: '600' }}>+{hist.points} pts</Text>
+      <View style={styles.bar}>
+        <Text style={{ fontSize: 20, fontWeight: 'bold' }}>History</Text>
+        <Pressable
+          style={{ flexDirection: 'row', alignItems: 'center' }}
+          onPress={() => navigation?.navigate('History')}>
+          <Text style={{ color: 'white', fontWeight: '600', fontSize: 12 }}>View All </Text>
+          <Text style={{ color: 'white', fontWeight: '800', fontSize: 20, marginBottom: 4 }}>{'>'}</Text>
+        </Pressable>
       </View>
-    )}
+    <ScrollView style={styles.main}>
+      {histories.map(hist =>
+        <View key={hist.item} style={styles.histContainer}>
+          <View>
+            <Text style={{ fontWeight: '600' }}>{hist.item}</Text>
+            <Text style={{ fontWeight: '600', color: '#00000077' }}>{hist.date}</Text>
+          </View>
+          <Text style={{ fontWeight: '600' }}>+{hist.points} pts</Text>
+        </View>
+      )}
+    </ScrollView>
   </View>
 }
 
@@ -45,10 +46,11 @@ const styles = StyleSheet.create({
     paddingVertical: 20
   },
   bar: {
+    top: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 4,
+    paddingVertical: 8,
     paddingHorizontal: 16,
     backgroundColor: '#FDA829'
   },

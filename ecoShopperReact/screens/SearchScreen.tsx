@@ -19,7 +19,7 @@ export default function SearchScreen({ navigation }: { navigation: any }) {
       alignItems: 'center',
       justifyContent: 'flex-start',
       backgroundColor: colors.background,
-      paddingTop: 30,
+      paddingTop: 50,
       paddingHorizontal: 20
     },
     imageBackground: {
@@ -52,4 +52,3 @@ export default function SearchScreen({ navigation }: { navigation: any }) {
     </View>
   );
 }
-

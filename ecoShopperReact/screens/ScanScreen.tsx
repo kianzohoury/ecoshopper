@@ -8,7 +8,7 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();
   const [hasPermission, setHasPermission] = React.useState<Boolean | null>(null);
   const [type, setType] = React.useState(Camera.Constants.Type.back);
-  const [flash, setFlash] = React.useState(Camera.Constants.FlashMode.off)
+  const [flash, setFlash] = React.useState(Camera.Constants.FlashMode.off);
   const windowWidth = Dimensions.get('window').width;
 
   React.useEffect(() => {
