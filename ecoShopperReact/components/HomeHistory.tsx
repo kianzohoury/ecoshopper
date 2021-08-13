@@ -17,16 +17,16 @@ const histories = [
 
 export function HomeHistory({ navigation }: { navigation: any }) {
   return <View style={styles.main}>
-      <View style={styles.bar}>
-        <Text style={{ fontSize: 20, fontWeight: 'bold' }}>History</Text>
-        <Pressable
-          style={{ flexDirection: 'row', alignItems: 'center' }}
-          onPress={() => navigation?.navigate('History')}>
-          <Text style={{ color: 'white', fontWeight: '600', fontSize: 12 }}>View All </Text>
-          <Text style={{ color: 'white', fontWeight: '800', fontSize: 20, marginBottom: 4 }}>{'>'}</Text>
-        </Pressable>
-      </View>
-    <ScrollView style={styles.main}>
+    <View style={styles.bar}>
+      <Text style={{ fontSize: 20, fontWeight: 'bold' }}>History</Text>
+      <Pressable
+        style={{ flexDirection: 'row', alignItems: 'center' }}
+        onPress={() => navigation?.navigate('History')}>
+        <Text style={{ color: 'white', fontWeight: '600', fontSize: 12 }}>View All </Text>
+        <Text style={{ color: 'white', fontWeight: '800', fontSize: 20, marginBottom: 4 }}>{'>'}</Text>
+      </Pressable>
+    </View>
+    <View style={styles.main}>
       {histories.map(hist =>
         <View key={hist.item} style={styles.histContainer}>
           <View>
@@ -36,7 +36,7 @@ export function HomeHistory({ navigation }: { navigation: any }) {
           <Text style={{ fontWeight: '600' }}>+{hist.points} pts</Text>
         </View>
       )}
-    </ScrollView>
+    </View>
   </View>
 }
 
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 8,
+    paddingVertical: 5,
     paddingHorizontal: 16,
     backgroundColor: '#FDA829'
   },
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 12,
+    paddingVertical: 5,
     paddingHorizontal: 24
   }
 })

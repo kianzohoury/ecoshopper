@@ -13,6 +13,26 @@ export default function SearchScreen({ navigation }: { navigation: any }) {
   const [searchQuery, setSearchQuery] = React.useState('');
   const onChangeSearch = (query: string) => setSearchQuery(query);
 
+  const onSubmitChange = (e: any) => {
+    navigation.navigate('Loading');
+    const getResult = (code: any) =>
+      fetch(`http://e1c925f9a2ba.ngrok.io/ecoshopper/barcode/${code}`)
+        .then(resp => resp.json())
+        .then(json => {
+          console.log(json);
+          navigation.pop();
+          navigation.navigate('FoundScreen', {
+            screen: 'Overview',
+            params: json
+          });
+        })
+        .catch(err => {
+          console.error(err);
+          navigation.navigate('NotFoundScreen');
+        })
+    getResult(searchQuery);
+  }
+
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -47,6 +67,7 @@ export default function SearchScreen({ navigation }: { navigation: any }) {
       <Searchbar
         placeholder="Search"
         onChangeText={onChangeSearch}
+        onSubmitEditing={onSubmitChange}
         value={searchQuery}
       />
     </View>

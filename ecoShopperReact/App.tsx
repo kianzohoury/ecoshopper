@@ -49,7 +49,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
       initialRouteName="Home"
       shifting={true}
       backBehavior="initialRoute"
-      barStyle={{ backgroundColor: MyTheme.colors.background, height: 70}}
+      barStyle={{ backgroundColor: MyTheme.colors.background, height: 60 }}
     >
       <Tab.Screen
         name="News"
@@ -57,7 +57,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="newspaper-outline" color={color} size={22} />
-          ),
+          )
         }}
       />
       <Tab.Screen
@@ -90,7 +90,7 @@ function TabsScreen({ navigation, route }: { navigation: any, route: any }) {
       />
       <Tab.Screen
         name="Settings"
-        component={FoundScreen}
+        component={SettingsScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <Ionicons name="settings-outline" color={color} size={22} />

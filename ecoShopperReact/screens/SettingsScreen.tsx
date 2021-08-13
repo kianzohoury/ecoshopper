@@ -31,7 +31,6 @@ export default function SettingsScreen({ navigation }: { navigation: any }) {
     container: {
       flex: 1,
       marginTop: StatusBar.currentHeight,
-      marginTop: 70,
       justifyContent: 'center',
       // marginBottom:
     },
@@ -78,7 +77,7 @@ export default function SettingsScreen({ navigation }: { navigation: any }) {
         data={DATA}
         initialNumToRender={4}
         renderItem={({ item }) => <Item answer={item.answer} title={item.title} />}
-        keyExtractor={item => item.key}
+        keyExtractor={item => item.id}
         getItemCount={getItemCount}
         getItem={getItem}
       />

@@ -10,7 +10,7 @@ import upcycleData from '../assets/jsons/cola_upcycle.json'
 import altData from '../assets/jsons/cola_alternatives.json'
 import NewsPreview from '../components/NewsPreview';
 
-const ALTERNATIVE_ENABLED = true;
+const ALTERNATIVE_ENABLED = false;
 const Tab = createMaterialTopTabNavigator();
 
 function OverviewView({ route }: { route: any }) {

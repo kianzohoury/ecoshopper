@@ -68,15 +68,6 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
     console.log(`type: ${result.type}, data: ${result.data}`);
     navigation.navigate('Loading');
 
-    // Promise.resolve({
-    //   "upc": "07811403",
-    //   "object": "Canada Dry Ginger Ale, 12 ounce can - Rips 2 Go",
-    //   "recyclable": true,
-    //   "img_link": "https://cdn11.bigcommerce.com/s-ya2jfekefv/images/stencil/760x760/products/607/824/68d6d76263cff2daff0c6e8bce56c16e7240d100__63014.1589656790.jpg?c=1",
-    //   "reusable": false,
-    //   "eco_score": 5,
-    //   "alternatives": ""
-    // })
     const mockData = new Promise(resolve => setTimeout(resolve, 1500, {
       "upc": "07811403",
       "object": "Canada Dry Ginger Ale, 12 ounce can - Rips 2 Go",
@@ -86,22 +77,23 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
       "eco_score": 5,
       "alternatives": ""
     }));
-    const getResult = (code: any) => mockData
-      // fetch(`http://e1c925f9a2ba.ngrok.io/ecoshopper/barcode/${code}`)
-      //   .then(resp => resp.json())
-      .then(json => {
-        console.log(json);
-        navigation.dispatch(StackActions.pop(2));
-        navigation.navigate('FoundScreen', {
-          screen: 'Overview',
-          params: json
-        });
-        // alert(`from api: ${json.upc}, ${json.object}`)
-      })
-      .catch(err => {
-        console.error(err);
-        navigation.navigate('NotFoundScreen');
-      })
+    const getResult = (code: any) =>
+      // mockData
+      fetch(`http://e1c925f9a2ba.ngrok.io/ecoshopper/barcode/${code}`)
+        .then(resp => resp.json())
+        .then(json => {
+          console.log(json);
+          navigation.dispatch(StackActions.pop(2));
+          navigation.navigate('FoundScreen', {
+            screen: 'Overview',
+            params: json
+          });
+          // alert(`from api: ${json.upc}, ${json.object}`)
+        })
+        .catch(err => {
+          console.error(err);
+          navigation.navigate('NotFoundScreen');
+        })
     getResult(result.data);
   }
 
