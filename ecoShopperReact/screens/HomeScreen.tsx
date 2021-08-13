@@ -31,6 +31,7 @@ export default function HomeScreen({ navigation, route }: { navigation: any, rou
     },
     title: {
       fontSize: 24,
+      paddingTop: 10,
       fontWeight: '600',
       marginTop: 40,
       textAlign: 'center'
@@ -60,4 +61,3 @@ export default function HomeScreen({ navigation, route }: { navigation: any, rou
     </View>
   );
 }
-
