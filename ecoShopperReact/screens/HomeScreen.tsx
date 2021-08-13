@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, StatusBar, Dimensions } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View, Image, ImageBackground, StatusBar, Dimensions } from 'react-native';
 import { useTheme, NavigationContainer } from '@react-navigation/native';
 
 import { BlackButton } from '../components/BlackButton';
@@ -30,9 +30,9 @@ export default function HomeScreen({ navigation, route }: { navigation: any, rou
       left: 0
     },
     title: {
-      fontSize: 24,
-      paddingTop: 10,
-      fontWeight: '600',
+      fontSize: 30,
+      paddingTop: 14,
+      fontWeight: 'bold',
       marginTop: 40,
       textAlign: 'center'
     },
@@ -47,7 +47,7 @@ export default function HomeScreen({ navigation, route }: { navigation: any, rou
 
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <StatusBar animated={true} backgroundColor={colors.background} barStyle="dark-content" />
       <CirclesSvg style={styles.svgBackground} />
       <View>
@@ -58,6 +58,6 @@ export default function HomeScreen({ navigation, route }: { navigation: any, rou
         </BlackButton>
       </View>
       <HomeHistory navigation={navigation} />
-    </View>
+    </SafeAreaView>
   );
 }
