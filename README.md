@@ -2,27 +2,29 @@
 
 # ecoshopper ♻️ 🛒
 
-<div class="row" style="text-align: center">
-  <div style="display: inline-block">
-    <img src="assets/frame-1.png" width="auto" height=250px>
+<p align="center" >
+  <img src="assets/frame-1.png" width="auto" height=250px style="display: inline;">
+  <img src="assets/frame-2.png" width="auto" height=250px style="display: inline;">
+  <div>
+
   </div>
-  <div style="display: inline-block">
-    <img src="assets/frame-2.png" width="auto" height=250px>
+  <div>
+
   </div>
-  <div style="display: inline-block">
-    <img src="assets/frame-3.png" width="auto" height=250px>
+  <div>
+    <img src="assets/frame-3.png" width="auto" height=250px style="display: inline;">
   </div>
-  <div style="display: inline-block">
-    <img src="assets/frame-4.png" width="auto" height=250px>
+  <div>
+    <img src="assets/frame-4.png" width="auto" height=250px style="display: inline;">
   </div>
-  <div style="display: inline-block">
-    <img src="assets/frame-5.png" width="auto" height=250px>
+  <div>
+    <img src="assets/frame-5.png" width="auto" height=250px style="display: inline;">
   </div>
-  <div style="display: inline-block">
-    <img src="assets/frame-6.png" width="auto" height=250px>
+  <div>
+    <img src="assets/frame-6.png" width="auto" height=250px style="display: inline;">
   </div>
-  <div style="display: inline-block">
-    <img src="assets/frame-7.png" width="auto" height=250px>
+  <div>
+    <img src="assets/frame-7.png" width="auto" height=250px style="display: inline;">
   </div>
 </div>
 
