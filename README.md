@@ -27,7 +27,8 @@ Note: This repository is no longer active.</div>
 
 ## Installation & Running the App
 
-If you do not wish to reproduce the environment and necessary dependencies, you can jump right ahead to [Using the React Native Web Console](#use-the-react-native-web-console) section, which doess not require installation.
+To reproduce the environment and necessary dependencies for this project, follow
+these instructions:
 
 1. First, make sure you have `npm` installed. Follow the guide here: [node.js Download](https://nodejs.org/en/download/)
 
