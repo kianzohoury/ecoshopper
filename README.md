@@ -3,13 +3,13 @@
 # ecoshopper ♻️ 🛒
 
 <p align="center" >
-  <img src="assets/frame-1.png" width="auto" height=250px style="display: inline;">
-  <img src="assets/frame-2.png" width="auto" height=250px style="display: inline;">
-  <img src="assets/frame-3.png" width="auto" height=250px style="display: inline;">
-  <img src="assets/frame-4.png" width="auto" height=250px style="display: inline;">
-  <img src="assets/frame-5.png" width="auto" height=250px style="display: inline;">
-  <img src="assets/frame-6.png" width="auto" height=250px style="display: inline;">
-  <img src="assets/frame-7.png" width="auto" height=250px style="display: inline;">
+  <img src="assets/frame-1.png" width="auto" height=200px style="display: inline;">
+  <img src="assets/frame-2.png" width="auto" height=200px style="display: inline;">
+  <img src="assets/frame-3.png" width="auto" height=200px style="display: inline;">
+  <img src="assets/frame-4.png" width="auto" height=200px style="display: inline;">
+  <img src="assets/frame-5.png" width="auto" height=200px style="display: inline;">
+  <img src="assets/frame-6.png" width="auto" height=200px style="display: inline;">
+  <img src="assets/frame-7.png" width="auto" height=200px style="display: inline;">
   <div>
 
 
