@@ -2,7 +2,7 @@
 
 # ecoshopper ♻️ 🛒
 
-<p align="center" >
+<p align="center">
   <img src="assets/frame-1.png" width="auto" height=200px style="display: inline;">
   <img src="assets/frame-2.png" width="auto" height=200px style="display: inline;">
   <img src="assets/frame-3.png" width="auto" height=200px style="display: inline;">
@@ -10,14 +10,15 @@
   <img src="assets/frame-5.png" width="auto" height=200px style="display: inline;">
   <img src="assets/frame-6.png" width="auto" height=200px style="display: inline;">
   <img src="assets/frame-7.png" width="auto" height=200px style="display: inline;">
-  <div>
+</p
 
 
 Ecoshopper was a prototype mobile web application designed as part of a final project for the Summer 2021 iteration of UC Berkeley's CS 160. The core of the app is an image classifier (pretrained VGG-16) that was fine tuned on the [TrashNet](https://github.com/garythung/trashnet#trashnet) dataset for the task of identifying recylable goods from non-recyclable goods. The model pipeline involved a fairly unique method that extracted metadata from an item's barcode to reverse search n (n being odd) images most relevant to the query. The classifier ran inference on the images and returned a prediction (recyclable or non-recyclable). The model was implemented with PyTorch and deployed with Django, while the front-end was built with React Native.
 
-<div style="text-align: center">
-  <img src="assets/pipeline.png" width="55%" height="auto">
-</div>
+<p align="center">
+  <img src="assets/pipeline.png" width="55%" height="auto" style="display: inline;>
+</p>
+
 </div>
 
 Note: This repository is no longer active.</div>
