@@ -1,33 +1,54 @@
-# ecoshopper
 
-[Frontend guide](ecoShopperReact/README.md)
 
-This is our final project documentation. Feel free to add more tasks or TODOs as we continue working. I've added the notebook that runs the model that we'll use for the object detection task. 
+# ecoshopper ♻️ 🛒
 
-## Dataset
+<center>
+  <div>
+    <img src="assets/frame-1.png" width="auto" height=250px>
+    <img src="assets/frame-2.png" width="auto" height=250px>
+    <img src="assets/frame-3.png" width="auto" height=250px>
+    <img src="assets/frame-4.png" width="auto" height=250px>
+    <img src="assets/frame-5.png" width="auto" height=250px>
+  </div>
+ </center>
 
-The current image classifier is trained on images from [TrashNet](https://github.com/garythung/trashnet#trashnet). This dataset contains 2527 images — 501 glass, 594 paper, 403 cardboard, 482 plastic, 410 metal, 137 trash. The classifier achieves somewhere between 70-74.7% test accuracy compared to the 75% reached by the original team at Stanford.
 
-The issue with this dataset is that it's relatively small, lacks diversity of objects, and does not have bounding box labels. Therefore, we need another dataset. [TACO](https://github.com/pedropro/TACO) has many more classes and bounding box labels, so we can train our model to perform semantic segmentation instead of vanilla image classifcation with the current dataset.
 
-## Tasks
+Ecoshopper was a prototype mobile web application designed as part of a final project for the Summer 2021 iteration of UC Berkeley's CS 160. The core of the app is an image classifier (pretrained VGG-16) that was fine tuned on the [TrashNet](https://github.com/garythung/trashnet#trashnet) dataset for the task of identifying recylable goods from non-recyclable goods. The model pipeline involved a fairly unique method that extracted metadata from an item's barcode to reverse search n (n being odd) images most relevant to the query. The classifier ran inference on the images and returned a prediction (recyclable or non-recyclable). The model was implemented with PyTorch and deployed with Django, while the front-end was built with React Native. 
 
-##### Object Detection
 
-Take an image containing a waste object (recyclable or not) and classify each pixel according to the classifier's waste class prediction for each pixel. For example, each pixel of an image containing a paper cup with a plastic straw and lid will be classified as either beloning to paper or plastic by the classifier. 
 
-##### Barcode Scanning
+<img src="assets/pipeline.png" width="55%" height="auto">
 
-This task involves scanning a barcode, which will get information about the item (i.e. product name, brand, etc), which can then be used as input into another classifier. Based on the information extracted from the barcode, we might need to be creative in order to match the item with its recycling/reusabiliity protocol. For example, scanning the barcode of an item reveals it to be a coke can; however, we need to parse that information — possibly as a word embedding — to be classified into its material and therefore waste protocol. 
 
-1. Scan barcode 
-2. Identify item name, brand, etc.
-3. Classify item by its material
 
-## TODOs
+Note: This repository is no longer active.</div>
 
-- Transform the current model into an object detector (semantic segmentation)
 
-- Investigate barcode API's
 
-  
+## Installation & Running the App
+
+If you do not wish to reproduce the environment and necessary dependencies, you can jump right ahead to [Using the React Native Web Console](#use-the-react-native-web-console) section, which doess not require installation.
+
+1. First, make sure you have `npm` installed. Follow the guide here: [node.js Download](https://nodejs.org/en/download/)
+
+2. Change into the `ecoShopperReact` folder with:
+
+   ```
+   cd ecoShopperReact
+   ```
+
+3. Run the following commands:
+
+   ```
+   npm install -g expo-cli
+   expo install
+   expo start
+   ```
+
+Then, the Expo developer tools should open in your browser window. 
+
+4. Next, click "Run in web browser". This will open up a new tab. After, access the developer tools on your browser and change the device layout to a mobile layout (e.g. iPhone X). Additionally, the app can be run within the [Expo Go app](https://expo.dev/tools#client) on a mobile device. 
+
+
+
