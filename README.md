@@ -2,23 +2,35 @@
 
 # ecoshopper ♻️ 🛒
 
-<center>
-  <div>
+<div style="text-align: center">
+  <div style="display: inline-block">
     <img src="assets/frame-1.png" width="auto" height=250px>
+  </div>
+  <div style="display: inline-block">
     <img src="assets/frame-2.png" width="auto" height=250px>
+  </div>
+  <div style="display: inline-block">
     <img src="assets/frame-3.png" width="auto" height=250px>
+  </div>
+  <div style="display: inline-block">
     <img src="assets/frame-4.png" width="auto" height=250px>
+  </div>
+  <div style="display: inline-block">
     <img src="assets/frame-5.png" width="auto" height=250px>
   </div>
- </center>
+</div>
 
 
 
-Ecoshopper was a prototype mobile web application designed as part of a final project for the Summer 2021 iteration of UC Berkeley's CS 160. The core of the app is an image classifier (pretrained VGG-16) that was fine tuned on the [TrashNet](https://github.com/garythung/trashnet#trashnet) dataset for the task of identifying recylable goods from non-recyclable goods. The model pipeline involved a fairly unique method that extracted metadata from an item's barcode to reverse search n (n being odd) images most relevant to the query. The classifier ran inference on the images and returned a prediction (recyclable or non-recyclable). The model was implemented with PyTorch and deployed with Django, while the front-end was built with React Native. 
+Ecoshopper was a prototype mobile web application designed as part of a final project for the Summer 2021 iteration of UC Berkeley's CS 160. The core of the app is an image classifier (pretrained VGG-16) that was fine tuned on the [TrashNet](https://github.com/garythung/trashnet#trashnet) dataset for the task of identifying recylable goods from non-recyclable goods. The model pipeline involved a fairly unique method that extracted metadata from an item's barcode to reverse search n (n being odd) images most relevant to the query. The classifier ran inference on the images and returned a prediction (recyclable or non-recyclable). The model was implemented with PyTorch and deployed with Django, while the front-end was built with React Native.
+
+<div style="text-align: center">
+  <img src="assets/pipeline.png" width="55%" height="auto">
+</div>
+
+</div>
 
 
-
-<img src="assets/pipeline.png" width="55%" height="auto">
 
 
 
@@ -46,9 +58,6 @@ If you do not wish to reproduce the environment and necessary dependencies, you 
    expo start
    ```
 
-Then, the Expo developer tools should open in your browser window. 
+Then, the Expo developer tools should open in your browser window.
 
-4. Next, click "Run in web browser". This will open up a new tab. After, access the developer tools on your browser and change the device layout to a mobile layout (e.g. iPhone X). Additionally, the app can be run within the [Expo Go app](https://expo.dev/tools#client) on a mobile device. 
-
-
-
+4. Next, click "Run in web browser". This will open up a new tab. After, access the developer tools on your browser and change the device layout to a mobile layout (e.g. iPhone X). Additionally, the app can be run within the [Expo Go app](https://expo.dev/tools#client) on a mobile device.
