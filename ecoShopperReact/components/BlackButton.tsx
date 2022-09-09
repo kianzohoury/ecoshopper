@@ -32,7 +32,7 @@ export function BlackButton({ children, onPress, bordered = false, icon = null }
           marginRight: 10,
         }}>{children}</Text>
         {icon &&
-          <Ionicons name={icon.name} color={icon.color} size={40} />
+          <Ionicons name={icon.name} color={bordered ? 'black' : pressed ? 'black' : 'white'} size={40} />
         }
       </View>
     )}

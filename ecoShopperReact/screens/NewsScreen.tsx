@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { SafeAreaView, Text, StyleSheet, ScrollView } from 'react-native';
 import { useTheme, NavigationContainer } from '@react-navigation/native';
+import { Appbar } from 'react-native-paper';
 
 import NewsPreview from '../components/NewsPreview';
 import news from '../assets/jsons/news.json'
@@ -15,8 +16,8 @@ export default function NewsScreen({ navigation }: { navigation: any }) {
     title: {
       margin: 10,
       paddingTop: 0,
-      fontSize: 30,
-      fontWeight: 'bold',
+      fontSize: 26,
+      fontWeight: '700',
       justifyContent: 'center',
       textAlign: 'center'
     },
@@ -25,7 +26,10 @@ export default function NewsScreen({ navigation }: { navigation: any }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Environmental News</Text>
+      {/* <Text style={styles.title}>Environmental News</Text> */}
+      <Appbar.Header statusBarHeight={8} style={{ backgroundColor: colors.background }}>
+        <Appbar.Content title="Environmental News" />
+      </Appbar.Header>
       <ScrollView style={styles.container}>
         {news.map(n => <NewsPreview key={n.title} title={n.title} date={n.date} picUrl={n.pic} />)
         }

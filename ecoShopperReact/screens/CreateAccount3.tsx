@@ -4,7 +4,7 @@ import { useTheme, StackActions } from '@react-navigation/native';
 
 import { BlackButton } from '../components/BlackButton';
 import { View } from '../components/Themed';
-import GoalBubbles from '../components/goalBubbles';
+import GoalBubbles from '../components/GoalBubbles';
 
 export default function CreateAccountPage3({ navigation, route }: { navigation: any, route: any }) {
   const { colors } = useTheme();
@@ -34,11 +34,20 @@ export default function CreateAccountPage3({ navigation, route }: { navigation: 
       <Text style={styles.title}>Tap your goals below. </Text>
       <GoalBubbles />
       <BlackButton onPress={() => {
-        navigation.dispatch(StackActions.popToTop())
-        navigation.navigate('Tabs', {
-          screen: 'Home',
-          params: { user: route.params?.user, score: 102 }
+        navigation.reset({
+          index: 0,
+          routes: [{
+            name: 'Tabs', params: {
+              screen: 'Home',
+              params: { user: route.params?.user, score: 102 }
+            }
+          }],
         });
+        // navigation.dispatch(StackActions.popToTop())
+        // navigation.navigate('Tabs', {
+        //   screen: 'Home',
+        //   params: { user: route.params?.user, score: 102 }
+        // });
       }}>{'Next >'}</BlackButton>
       <Text style={{ marginTop: 10 }}>Changes can be made later under Settings.</Text>
     </View>

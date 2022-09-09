@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Dimensions, StyleSheet, Text, View, Pressable, StatusBar } from 'react-native';
 import { useTheme, StackActions } from '@react-navigation/native';
 import { BarCodeScanningResult, Camera } from 'expo-camera';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function ScanScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();
@@ -49,14 +50,13 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
       justifyContent: 'center'
     },
     button: {
-      height: 50,
-      paddingHorizontal: 30,
-      marginTop: 10,
+      margin: 10,
+      padding: 10,
       alignItems: 'center',
       justifyContent: 'center',
       borderColor: 'black',
       borderWidth: 2,
-      borderRadius: 5
+      borderRadius: 5,
     },
     text: {
       color: 'black',
@@ -68,32 +68,32 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
     console.log(`type: ${result.type}, data: ${result.data}`);
     navigation.navigate('Loading');
 
-    // const { changeScreen } = this.state;
-
+    const mockData = new Promise(resolve => setTimeout(resolve, 1500, {
+      "upc": "07811403",
+      "object": "Canada Dry Ginger Ale, 12 ounce can - Rips 2 Go",
+      "recyclable": true,
+      "img_link": "https://cdn11.bigcommerce.com/s-ya2jfekefv/images/stencil/760x760/products/607/824/68d6d76263cff2daff0c6e8bce56c16e7240d100__63014.1589656790.jpg?c=1",
+      "reusable": false,
+      "eco_score": 5,
+      "alternatives": ""
+    }));
     const getResult = (code: any) =>
-      // Promise.resolve({
-      //   "eco score": 80,
-      //   "object": "Crayola Colored Pencils",
-      //   "recyclable": false,
-      //   "reusable": true,
-      //   "upc": 71662040246
-      // })
-      fetch(`http://04a5ebc15b16.ngrok.io/ecoshopper/barcode/${code}`)
+      // mockData
+      fetch(`http://e1c925f9a2ba.ngrok.io/ecoshopper/barcode/${code}`)
         .then(resp => resp.json())
         .then(json => {
           console.log(json);
           navigation.dispatch(StackActions.pop(2));
-          navigation.navigate('FoundScreen', json);
-          // this.setState({ changeScreen: true });
+          navigation.navigate('FoundScreen', {
+            screen: 'Overview',
+            params: json
+          });
           // alert(`from api: ${json.upc}, ${json.object}`)
         })
         .catch(err => {
           console.error(err);
           navigation.navigate('NotFoundScreen');
         })
-    // if (!changeScreen) {
-    //   getResult(result.data);
-    // }
     getResult(result.data);
   }
 
@@ -115,18 +115,22 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
         <Text style={styles.text}>Use Camera to Scan Code</Text>
         <View style={styles.buttonContainer}>
           <Pressable
-            style={styles.button}
             onPress={() => {
               setType(
                 type === Camera.Constants.Type.back
                   ? Camera.Constants.Type.front
                   : Camera.Constants.Type.back
               );
-            }}>
-            <Text style={styles.text}>Flip</Text>
+            }}
+            style={({ pressed }) => [{
+              backgroundColor: pressed ? 'transparent' : 'black'
+            }, styles.button]}
+          >
+            {/* <Text style={styles.text}>Flip</Text> */}
+            {/* <Ionicons name="camera-reverse" color="#fff" size={32} /> */}
+            {({ pressed }) => <Ionicons name="camera-reverse" color={pressed ? 'black' : 'white'} size={32} />}
           </Pressable>
           <Pressable
-            style={styles.button}
             onPress={() => {
               console.log(`Flash button fired, flash: ${flash}`);
               setFlash(
@@ -134,8 +138,13 @@ export default function ScanScreen({ navigation }: { navigation: any }) {
                   ? Camera.Constants.FlashMode.torch
                   : Camera.Constants.FlashMode.off
               );
-            }}>
-            <Text style={styles.text}>Flash</Text>
+            }}
+            style={({ pressed }) => [{
+              backgroundColor: pressed ? 'transparent' : 'black'
+            }, styles.button]}
+          >
+            {/* <Text style={styles.text}>Flash</Text> */}
+            {({ pressed }) => <Ionicons name="flash" color={pressed ? 'black' : 'white'} size={32} />}
           </Pressable>
         </View>
       </View>

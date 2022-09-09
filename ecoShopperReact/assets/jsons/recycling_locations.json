@@ -1,0 +1,52 @@
+[
+    {
+        "locationName": "Berkeley Recycling Center",
+        "address": "669 Gilman St, Berkeley, CA 94710",
+        "distance": 3.8
+    },
+    {
+        "locationName": "Ecology Center",
+        "address": "1231 Second St, Berkeley, CA 94710",
+        "distance": 4.0
+    },
+    {
+        "locationName": "El Cerrito Recycling Center",
+        "address": "7501 Schmidt Ln, El Cerrito, CA 94530",
+        "distance": 5.8
+    },
+    {
+        "locationName": "Perez Paper Recyclers Inc",
+        "address": "508 Norvell St, El Cerrito, CA 94530",
+        "distance": 4.6
+    },
+    {
+        "locationName": "National Recycling Corporation",
+        "address": "1312 Kirkham Ct, Oakland, CA 94607",
+        "distance": 5.6
+    },
+    {
+        "locationName": "East Bay Resources",
+        "address": "2430 Willow St, Oakland, CA 94607",
+        "distance": 5.2
+    },
+    {
+        "locationName": "CASS, Inc",
+        "address": "2730 Peralta St, Oakland, CA 94607",
+        "distance": 4.8
+    },
+    {
+        "locationName": "Computer & Technology Resource Center",
+        "address": "620 Page St, Berkeley, CA 94710",
+        "distance": 3.8
+    },
+    {
+        "locationName": "Automatic Recycling Solutions",
+        "address": "695 Cedar St, Berkeley, CA 94710",
+        "distance": 3.5
+    },
+    {
+        "locationName": "Green Planet 21",
+        "address": "336 Adeline St, Oakland, CA 94607",
+        "distance": 5.7
+    }
+]

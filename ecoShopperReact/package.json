@@ -15,7 +15,10 @@
     "@expo/vector-icons": "^12.0.0",
     "@ptomasroos/react-native-multi-slider": "^2.2.2",
     "@react-native-community/masked-view": "0.1.10",
+    "@react-native-community/slider": "3.0.3",
+    "@react-native-seoul/masonry-list": "^1.0.7",
     "@react-navigation/material-bottom-tabs": "^6.0.4",
+    "@react-navigation/material-top-tabs": "^6.0.2",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.2",
     "expo": "^42.0.3",
@@ -38,8 +41,7 @@
     "react-native-screens": "~3.4.0",
     "react-native-svg": "12.1.1",
     "react-native-vector-icons": "^8.1.0",
-    "react-native-web": "~0.13.12",
-    "@react-native-community/slider": "3.0.3"
+    "react-native-web": "~0.13.12"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

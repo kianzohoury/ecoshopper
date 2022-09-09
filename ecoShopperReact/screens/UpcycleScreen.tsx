@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { SafeAreaView, StyleSheet, Text, ScrollView, FlatList } from 'react-native';
-import { useTheme, NavigationContainer } from '@react-navigation/native';
+import { StyleSheet, Text, FlatList, SafeAreaView } from 'react-native';
+import { useTheme } from '@react-navigation/native';
+import MasonryList from '@react-native-seoul/masonry-list';
 
 import upcycleData from '../assets/jsons/cola_upcycle.json'
 import NewsPreview from '../components/NewsPreview';
+import { Appbar } from 'react-native-paper';
 
 export default function UpcycleScreen({ navigation }: { navigation: any }) {
   const { colors } = useTheme();
@@ -25,8 +27,10 @@ export default function UpcycleScreen({ navigation }: { navigation: any }) {
 
   return (
     // consider make the view masonry
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Upcycling Ideas</Text>
+    <SafeAreaView>
+      <Appbar.Header statusBarHeight={8} style={{ backgroundColor: colors.background }}>
+        <Appbar.Content title="Upcycle Ideas" />
+      </Appbar.Header>
       <FlatList
         data={upcycleData}
         renderItem={({ item }) => <NewsPreview date="" picUrl={item.imgUrl} title={item.title} />}
