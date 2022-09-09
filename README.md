@@ -2,7 +2,7 @@
 
 # ecoshopper ♻️ 🛒
 
-<div style="text-align: center">
+<div class="row" style="text-align: center">
   <div style="display: inline-block">
     <img src="assets/frame-1.png" width="auto" height=250px>
   </div>
@@ -18,7 +18,14 @@
   <div style="display: inline-block">
     <img src="assets/frame-5.png" width="auto" height=250px>
   </div>
+  <div style="display: inline-block">
+    <img src="assets/frame-6.png" width="auto" height=250px>
+  </div>
+  <div style="display: inline-block">
+    <img src="assets/frame-7.png" width="auto" height=250px>
+  </div>
 </div>
+
 
 
 
